@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生访谈</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="../css/layui.css">
+    <style>
+        .on_focus,.mytable-hover tr:hover{
+            /*background-color: #c9daf8;*/
+            /*background-color: #C6E2FF;*/
+            background-color: #f5f5f5;
+            /*background-color: #C0D9D9*/
+            /*background-color: #f5f5f5*/
+            /*background-color: #BEEBEE*/
+        }
+        input[disabled],input:disabled,input[disabled]:hover,input:disabled:hover{
+            border:1px solid #DDD;
+            background-color:#F5F5F5;
+            color:#ACA899;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i>&nbsp;首页
+    <span class="c-green en">&gt;</span>学员谈话管理
+    <a class="btn btn-success radius r"
+       style="line-height: 1.6em;margin-top: 3px"
+       href="javascript:location.replace(location.href);"
+       title="刷新">
+        <i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+
+
+<div class="page-container">
+
+    <!-- 查询条件 -->
+    <form class="Huiform ml-10" method="post" target="_self">
+
+        <div class="row cl">
+            <label>学员姓名：</label>
+            <input type="text" class="input-text size-S radius" style="width: 120px">
+            &nbsp;&nbsp;
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;老师：</label>
+            <span class="select-box radius" style="width: 120px">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">戴美凤</option>
+                    <option value="">胡月</option>
+                    <option value="">李方</option>
+                </select>
+            </span>
+            &nbsp;&nbsp;
+            <label >访谈时间：</label>
+            <input type="date" class="input-text size-S radius" style="width: 120px"> &nbsp;— &nbsp;
+            <input type="date" class="input-text size-S radius" style="width: 120px">
+        </div>
+
+        <div class="row cl mt-5">
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;学籍号：</label>
+            <input type="text" class="input-text size-S radius" style="width: 120px">
+            &nbsp;&nbsp;
+            <label>所在班级：</label>
+            <span class="select-box radius" style="width: 120px">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">戴美凤</option>
+                    <option value="">胡月</option>
+                    <option value="">李方</option>
+                </select>
+            </span>
+            &nbsp;&nbsp;
+            <button type="button" class="btn btn-secondary-outline radius size-S" style="width: 120px">查询</button>
+        </div>
+
+    </form>
+
+
+    <!-- 功能按钮 -->
+    <form class="Huiform mt-20">
+        <div class="row cl text-r pr-20">
+            <input class="btn btn-secondary-outline size-S radius" type="button"
+                    onclick="addTalk('新增谈话')" value="新增谈话"/>
+            <input class="btn btn-secondary-outline size-S radius" id="btnquery" disabled
+                   onclick="queryTalk('谈话详情','stu_work/interview_detail.html')" value="查看谈话详情" style="width: 100px"/>
+            <input class="btn btn-secondary-outline size-S radius" id="btnupdate" disabled
+                   onclick="updateTalk('修改谈话')" value="修改谈话" style="width: 80px"/>
+        </div>
+    </form>
+
+    <div class="mt-20">
+        <table
+                class="table table-border table-bordered table-hover table-bg table-sort">
+            <thead>
+            <tr class="text-c">
+                <th>学籍号</th>
+                <th>学员姓名</th>
+                <th>性别</th>
+                <th>电话</th>
+                <th>所在班级</th>
+                <th>访谈时间</th>
+                <th>老师</th>
+
+                <th>是否欠费</th>
+                <th>成绩</th>
+
+                <th>解决办法</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr class="text-c" onclick="to_effect(this)">
+                <td>15</td>
+                <td>学员姓名</td>
+                <td>性别</td>
+                <td>电话</td>
+                <td>所在班级</td>
+                <td>访谈时间</td>
+                <td>老师</td>
+
+                <td>是否欠费</td>
+                <td>成绩</td>
+
+                <td>解决办法</td>
+            </tr>
+            <tr class="text-c" onclick="to_effect(this)">
+                <td>15</td>
+                <td>学员姓名</td>
+                <td>性别</td>
+                <td>电话</td>
+                <td>所在班级</td>
+                <td>访谈时间</td>
+                <td>老师</td>
+
+                <td>是否欠费</td>
+                <td>成绩</td>
+
+                <td>解决办法</td>
+
+            </tr>
+            <tr class="text-c" onclick="to_effect(this)">
+                <td>15</td>
+                <td>学员姓名</td>
+                <td>性别</td>
+                <td>电话</td>
+                <td>所在班级</td>
+                <td>访谈时间</td>
+                <td>老师</td>
+
+                <td>是否欠费</td>
+                <td>成绩</td>
+
+                <td>解决办法</td>
+
+            </tr>
+            <tr class="text-c" onclick="to_effect(this)">
+                <td>15</td>
+                <td>学员姓名</td>
+                <td>性别</td>
+                <td>电话</td>
+                <td>所在班级</td>
+                <td>访谈时间</td>
+                <td>老师</td>
+
+                <td>是否欠费</td>
+                <td>成绩</td>
+
+                <td>解决办法</td>
+
+            </tr>
+
+
+            </tbody>
+        </table>
+        <div id="talkpage" style="text-align: right">
+
+        </div>
+
+
+    </div>
+</div>
+
+<footer class="footer mt-20">
+    <div class="container">
+        Copyright &copy;2018-2028 SONG.net All Rights Reserved.
+    </div>
+</footer>
+
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/layui.js"></script>
+<script type="text/javascript" src="../libs/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="../libs/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript">
+
+    $(window).on("load",()=>{
+        $(document).on("click",function (event) {
+            var tagname = event.target.nodeName;
+            //console.log(tagname)
+            if(!(tagname=="TD" || tagname=="td")){
+                $("#btnquery,#btnupdate").attr("disabled","disabled")
+                $("tr").removeClass("on_focus");
+            }
+        })
+    })
+
+
+    layui.use('laypage',function () {
+        let laypage = layui.laypage
+        //完整功能
+        laypage.render({
+            elem: 'talkpage'
+            ,count: 100
+            ,limits: [15, 30, 50, 100]
+            ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+            ,jump: function(obj,first){
+                //console.log(obj)
+            }
+        });
+    })
+
+    function to_effect(obj) {
+        // 按钮生效
+        $("#btnquery,#btnupdate").removeAttr("disabled")
+        // 当前对象增色 兄弟对象去色
+        $(obj).addClass("on_focus").siblings().removeClass("on_focus");
+    }
+
+    function queryTalk(title,url) {
+        creatIframe(url,title)
+    }
+
+    function addTalk(title) {
+        console.log(title)
+        //creatIframe('stu_work/interview_edit.html',title)
+        //layer.message(title,'interview_edit.html',460,500)
+        layer_show(title,'interview_edit.html',900,560)
+
+    }
+
+    function updateTalk(title) {
+        console.log(title)
+        //creatIframe('stu_work/interview_edit.html',title)
+        //layer.message(title,'interview_edit.html',460,500)
+        layer_show(title,'interview_edit.html',900,560)
+
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

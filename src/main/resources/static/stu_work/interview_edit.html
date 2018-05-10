@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生访谈</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" type="text/css" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../libs/h-ui.admin/skin/default/skin.css" id="skin">
+    <link rel="stylesheet" type="text/css" href="../css/layui.css">
+    <style>
+        .bg-style{
+            font-weight: bold;
+        }
+        .newer-width{
+            width: 120px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="page-container">
+    <form class="form form-horizontal">
+
+        <div class="row cl" style="margin-top: 0px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">学籍号：</label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input type="text" class="input-text f-l" style="width: 90%">
+                <span style="color: red">*</span>
+            </div>
+
+            <label class="form-label col-xs-1 col-sm-2">学员姓名：</label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input type="text" class="input-text f-l" style="width: 90%">
+                <span style="color: red">*</span>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 8px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">联系电话：</label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input type="text" class="input-text f-l" style="width: 90%">
+                <span style="color: red">*</span>
+            </div>
+
+            <label class="form-label col-xs-1 col-sm-2">性别：</label>
+           <!--<div class="radio-box" style="margin-top: 4px">
+                <input type="radio" id="radio-1" name="sex" checked>
+                <label for="radio-1">男</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="radio-2" name="sex">
+                <label for="radio-2">女</label>
+            </div>-->
+
+            <div class="formControls skin-minimal col-xs-2 col-sm-3">
+                <div class="radio-box">
+                    <input type="radio" id="sex-1" name="sex">
+                    <label for="sex-1">男</label>
+                </div>
+                <div class="radio-box" >
+                    <input type="radio" id="sex-2" name="sex">
+                    <label for="sex-2">女</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row cl" style="margin-top: 8px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">所在班级：</label>
+            <div class="formControls col-xs-2 col-sm-3 cl">
+                <span class="select-box f-l" style="width: 90%">
+                    <select class="select" size="1">
+                        <option value="">请选择</option>
+                        <option value="">W170902J</option>
+                        <option value="">W171001J</option>
+                        <option value="">W171101J</option>
+                        <option value="">W171201J</option>
+                        <option value="">W130301J</option>
+                    </select>
+			    </span>
+                <span style="color: red">*</span>
+            </div>
+
+            <label class="form-label col-xs-1 col-sm-2">是否欠费：</label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input type="text" class="input-text f-l" style="width: 90%">
+                <span style="color: red">*</span>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 8px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">访谈时间：</label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input type="date" class="input-text f-l" style="width: 90%">
+                <span style="color: red">*</span>
+            </div>
+
+            <label class="form-label col-xs-1 col-sm-2">访谈老师：</label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input type="text" class="input-text f-l" style="width: 90%">
+                <span style="color: red">*</span>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 8px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">考勤情况：</label>
+            <div class="formControls col-xs-6 col-sm-8">
+                <textarea class="textarea" style="height: 64px"></textarea>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 8px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">谈话原因及<br>教员意见：</label>
+            <div class="formControls col-xs-6 col-sm-8">
+                <textarea class="textarea" style="height: 64px"></textarea>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 8px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">访谈记录：</label>
+            <div class="formControls col-xs-6 col-sm-8">
+                <textarea class="textarea" style="height: 64px"></textarea>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 8px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">解决办法：</label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input type="text" class="input-text f-l" style="width: 90%">
+                <span style="color: red">*</span>
+            </div>
+
+            <label class="form-label col-xs-1 col-sm-2">上传附件：</label>
+            <span class="btn-upload form-group">
+              <input class="input-text upload-url" type="text"  readonly style="width: 50%">
+                <a href="javascript:void(0);" class="btn btn-primary">
+                    <i class="Hui-iconfont">&#xe642;</i>
+                    浏览文件
+                </a>
+              <input type="file" multiple name="file-1" class="input-file">
+            </span>
+        </div>
+
+        <div class="row cl" style="margin-top: 8px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1"></label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="btn btn-default radius" type="reset" value="&nbsp;&nbsp;重置&nbsp;&nbsp;">
+            </div>
+        </div>
+
+
+    </form>
+
+</div>
+
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/layui.js"></script>
+
+<script type="text/javascript" src="../libs/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="../libs/h-ui/js/H-ui.min.js"></script>
+<script>
+    $(function(){
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+    })
+</script>
+</body>
+</html>
