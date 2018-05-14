@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预科班级查询</title>
+    <link rel="stylesheet" href="../favicon.ico">
+    <link rel="stylesheet" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="../libs/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .table th, .table td {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<!-- 面包屑导航栏 -->
+<nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 市场管理
+    <span class="c-gray en">&gt;</span> 预科班级查询
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+<!-- ！！面包屑导航栏 -->
+<div class="page-container">
+
+    <!-- 条件查询 -->
+    <form class="Huiform ml-10" method="post" target="_self">
+        <!-- 整排查询框 -->
+        <div class="row cl">
+            <label class="newer-form-label">学员姓名：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+
+            <label class="newer-form-label" style="width: 84px">预报名课程：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">JAVA开发</option>
+                    <option value="">WEB前端</option>
+                    <option value="">软件测试</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">预报班级：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">W170902J</option>
+                    <option value="">W170902J</option>
+                    <option value="">W170902J</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">咨询师：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">张三</option>
+                    <option value="">李四</option>
+                    <option value="">王五</option>
+                </select>
+            </span>
+
+            <button class="btn btn-primary size-S radius ml-20" type="button">查询</button>
+        </div>
+    </form>
+    <!-- 功能按钮 -->
+    <form class="Huiform mt-30">
+        <div class="row cl text-r pr-20">
+            <input class="btn newer-form-btn btn-primary size-MINI radius" type="button" value="新增预报名进班"
+                   onclick="layer_show($(this).val(),'market_onside_register_add.html',960,620)">
+            <input class="btn newer-form-btn btn-primary size-MINI radius" type="button" value="导出表格数据">
+        </div>
+    </form>
+    <!-- !!功能按钮 -->
+    <!-- 表格数据 -->
+    <table class="table table-border table-bg table-bordered mt-10">
+        <thead>
+        <tr class="text-c">
+            <th>序号</th>
+            <th>学生姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>学校</th>
+            <th>专业</th>
+            <th>学历</th>
+            <th>预报名课程</th>
+            <th>预报班级</th>
+            <th>缴费记录</th>
+            <th>咨询师</th>
+            <th>备注</th>
+        </tr>
+        </thead>
+        <tbody class="text-c">
+        <tr>
+            <td>1</td>
+            <td>小肖</td>
+            <td>女</td>
+            <td>18</td>
+            <td>涉外</td>
+            <td>英语</td>
+            <td>大专</td>
+            <td>WEB前端</td>
+            <td>W170902W</td>
+            <td>已缴费17800</td>
+            <td>古月胡</td>
+            <td>无</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>小肖</td>
+            <td>女</td>
+            <td>18</td>
+            <td>涉外</td>
+            <td>英语</td>
+            <td>大专</td>
+            <td>WEB前端</td>
+            <td>W170902W</td>
+            <td>已缴费17800</td>
+            <td>古月胡</td>
+            <td>无</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>小肖</td>
+            <td>女</td>
+            <td>18</td>
+            <td>涉外</td>
+            <td>英语</td>
+            <td>大专</td>
+            <td>WEB前端</td>
+            <td>W170902W</td>
+            <td>已缴费17800</td>
+            <td>古月胡</td>
+            <td>无</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>小肖</td>
+            <td>女</td>
+            <td>18</td>
+            <td>涉外</td>
+            <td>英语</td>
+            <td>大专</td>
+            <td>WEB前端</td>
+            <td>W170902W</td>
+            <td>已缴费17800</td>
+            <td>古月胡</td>
+            <td>无</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>小肖</td>
+            <td>女</td>
+            <td>18</td>
+            <td>涉外</td>
+            <td>英语</td>
+            <td>大专</td>
+            <td>WEB前端</td>
+            <td>W170902W</td>
+            <td>已缴费17800</td>
+            <td>古月胡</td>
+            <td>无</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- ！！表格数据 -->
+
+    <!--分页容器-->
+    <div id="page" style="text-align:right"></div>
+    <!-- ！！分页容器 -->
+</div>
+<script src="../js/jquery.2.1.4.min.js"></script>
+<script src="../libs/WdatePicker/WdatePicker.js"></script>
+<script src="../libs/layui/layui.js"></script>
+<script src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<script src="../libs/h-ui/js/H-ui.min.js"></script>
+<script src="../js/script.js"></script>
+<script>
+    layui.use(['laypage', 'layer'], function () {
+        let laypage = layui.laypage
+            , layer = layui.layer;
+        //完整功能
+        laypage.render({
+            elem: 'page'
+            , count: 100
+            , limits: [15, 30, 50, 100]
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+    });
+
+    // 表格行颜色变化脚本
+    $(function () {
+        // 1.上色
+        $('tbody>tr').click(function () {
+            // 1.1 该行变色，其他行去色
+            $(this).siblings().removeClass('newer-bgColor').end().addClass('newer-bgColor');
+            // 1.2 启用限制功能按钮
+            $('.newer-disabled').prop('disabled', false);
+            $('#btnSave').val('修改上门咨询').removeClass('btn-success').addClass('btn-primary');
+            // 1.3 隐藏表单id重新赋值
+            $('#id').val($(this).attr('id'));
+            // 测试传参：id
+            alert($(this).attr('id'))
+        });
+        // 2.去色
+        $(document).click(function (ev) {
+            let oEvent = ev || event; // 获得事件对象本身
+            let target = $(oEvent.target); // oEvent.target 获得事件对象的html元素
+            // 当点击对象的元素不为td或button时
+            if (!target.is('td') && !target.is('input') && !target.is('button')) { // is() 用于元素之间的比较
+                // 2.1 所有行去色
+                $('tbody>tr').removeClass('newer-bgColor');
+                // 2.2 禁用限制功能按钮
+                $('.newer-disabled').prop('disabled', true);
+                $('#btnSave').val('新增上门咨询').removeClass('btn-primary').addClass('btn-success');
+                // 2.3 隐藏表单id归0btn-success
+                $('#id').val(0);
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>新增宿舍</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+</head>
+<body>
+<section class="aui-content">
+    <div style="height:20px;"></div>
+    <div class="aui-content-up">
+        <div class="card-body">
+            <form action="" method="post" id="form">
+                <div class="aui-content-up-form">
+                    <h2>新开房间</h2>
+                </div>
+                <div class="aui-form-group clear">
+                    <label class="aui-label-control">
+                        房间号 <em>*</em>
+                    </label>
+                    <div class="aui-form-input">
+                        <input type="text" class="aui-form-control-two" name="yourname"  id="yourname" placeholder="请输入房间名称">
+                    </div>
+                </div>
+                <div class="aui-form-group clear">
+                    <label class="aui-label-control">
+                        租金 <em>*</em>
+                    </label>
+                    <div class="aui-form-input">
+                        <input type="text" class="aui-form-control-two" name="zujin" id="zujin" placeholder="请输入所需租金"/>
+                    </div>
+                </div>
+                <div class="aui-form-group clear">
+                    <label class="aui-label-control">
+                        容纳人数 <em>*</em>
+                    </label>
+                    <div class="aui-form-input">
+                        <input type="password" class="aui-form-control-two" name="renshu" id="renshu" placeholder="请输入容纳人数"/>
+                    </div>
+                </div>
+                <div class="aui-form-group clear">
+                    <label class="aui-label-control">
+                        已住人数<em>*</em>
+                    </label>
+                    <div class="aui-form-input">
+                        <input type="password" class="aui-form-control-two" name="yizhu" id="yizhu" placeholder="请输入已住人数" />
+                    </div>
+                </div>
+                <div class="aui-form-group clear">
+                    <label class="aui-label-control">
+                        宿舍名称<em>*</em>
+                    </label>
+                    <div class="aui-form-input">
+                        <input type="text" class="aui-form-control-two" name="sushe" id="sushe" placeholder="请输入宿舍名称"/>
+                    </div>
+                </div>
+                <div class="aui-form-group-text">
+                    <button type="submit" class="aui-btn aui-btn-account">保存并提交审核</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<script src="../js/jquery.2.1.4.min.js"></script>
+<script src="../js/jquery.validation/jquery.validate.js"></script>
+<script>
+
+    $(window).on('load', () => {
+        $("#form").validate({
+            // 验证规则
+            rules: {
+                // 控件name: 规则
+                yourname: {
+                    required: true,
+                    minlength: 1,
+                    maxlength: 10,
+                },
+                zujin: {
+                    required: true,
+                    //minlength: 6
+                },
+                renshu: {
+                    required: true,
+                    minlength: 1
+                },
+                yizhu: {
+                    required: true,
+                    //minlength: 2
+                },
+                sushe: {
+                    required: true,
+                    minlength: 1,
+                    //equalTo: "#password" // id
+                }
+            },
+            // 提示信息: 验证不正确时的信息
+            messages: {
+                // 控件name: 提示信息
+                yourname: {
+                    required: "<span style='color:red'>请输入房间名称</span>",
+                    // {0} 引用规则中 username.minlength 属性的第一个值
+                    minlength: "用户名的长度应不少于 {0} 位",
+                    maxlength: "用户名的长度应不大于 {0} 位"
+                },
+                zujin: {
+                    required: "<span style='color:red'>请输入租金</span>",
+                    //minlength: "长度应不少于 {0} 位",
+                },
+                renshu: {
+                    required: "<span style='color:red'>请输入容纳人数</span>",
+                    minlength: "人数不得低于1"
+                },
+                yizhu: {
+                    required: "<span style='color:red'>请输入已住人数</span>",
+                    //minlength: "人数不得超过最大容纳人数"
+                },
+                sushe: {
+                    required: "<span style='color:red'>请输入宿舍名称</span>",
+                    minlength: "不少于1个字符",
+                    //equalTo: "请输入相同的密码"
+                }
+
+            },
+            submitHandler: function () {
+                // 已通过验证,提交表单数据到服务器
+                // alert("submitted")
+
+                /*
+                var formData = {
+                  id: 0,
+                  name: $("#firstname").val(),
+                  price: 188,
+                  createDate: "2018-03-04"
+                }
+
+                $.ajax({
+                  type: "post",
+                  url: "ToyjqServlet",
+                  data: formData,
+                  dataType: "json",
+                  success: function (data) {
+                    console.log("save success...")
+                  }
+                })
+                */
+            }
+        })
+    })
+</script>
+</body>
+</html>

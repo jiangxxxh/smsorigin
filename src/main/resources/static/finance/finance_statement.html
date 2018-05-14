@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>财务核查</title>
+    <link rel="stylesheet" href="../favicon.ico">
+    <link rel="stylesheet" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="../libs/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<!-- 面包屑导航栏 -->
+<nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 财务管理
+    <span class="c-gray en">&gt;</span> 财务报表
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+<!-- ！！面包屑导航栏 -->
+<div class="page-container">
+
+    <!-- 条件查询 -->
+    <form class="Huiform ml-10" method="post" target="_self">
+        <!-- 整排查询框 -->
+        <div class="row cl">
+            <label class="newer-form-label">校区：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">五一校区</option>
+                    <option value="">林科大校区</option>
+                    <option value="">涉外校区</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">专业：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">JAVA</option>
+                    <option value="">WEB前段</option>
+                    <option value="">测试</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">班级：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">w170902j</option>
+                    <option value="">w170501j</option>
+                    <option value="">w170605j</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">缴费类型：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">分期</option>
+                    <option value="">一次性</option>
+                    <option value="">回贷</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">学员姓名：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+        </div>
+
+        <div class="row cl mt-5">
+            <label class="newer-form-label">学籍号：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+
+            <button class="btn btn-primary size-S radius ml-20" type="button">查询</button>
+        </div>
+        <!-- ！！整排查询框 -->
+    </form>
+    <!-- ！！条件查询 -->
+
+    <!-- 功能按钮 -->
+    <form class="Huiform mt-30">
+        <div class="row cl text-r pr-20">
+            <input class="btn newer-form-inline btn-primary size-MINI radius" type="button" value="导出核查报表"
+                   onclick="layer_show('报表导出','report_forms.html',500,380)">
+            <!--<input class="btn newer-form-inline btn-primary size-MINI radius" type="button" disabled value="指派咨询师">
+            <input class="btn newer-form-inline btn-primary size-MINI radius" type="button" value="导入备案数据"
+            onclick="layer_show('导入备案数据','market_register_upload.html',540,220)">
+            <input class="btn newer-form-inline btn-primary size-MINI radius" type="button" value="查看备案跟踪记录">
+        --></div>
+    </form>
+    <!-- !!功能按钮 -->
+    <!-- 表格数据 -->
+    <table class="table table-border table-bg table-bordered mt-10 table-hover">
+        <thead>
+        <tr class="text-c">
+            <th>序号</th>
+            <th>学籍号</th>
+            <th>学生姓名</th>
+            <th>专业</th>
+            <th>校区</th>
+            <th>班级</th>
+            <th>学费缴费方式</th>
+            <th>学费应缴</th>
+            <th>学费实缴</th>
+            <th>学费欠费</th>
+            <th>教材</th>
+            <th>教材费应缴</th>
+            <th>教材费实缴</th>
+            <th>宿舍</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+
+        <tbody class="text-c">
+        <tr>
+            <th>1</th>
+            <th>15313512</th>
+            <th>問心</th>
+            <th>java</th>
+            <th>五一校区</th>
+            <th>w170902j</th>
+            <th>分期</th>
+            <th>17800</th>
+            <th>5800</th>
+            <th></th>
+            <th>不需要教材</th>
+            <th></th>
+            <th></th>
+            <th>宿舍</th>
+            <th>
+                <button type="button" class="btn btn-success-outline radius"
+                        onclick="layer_show('查看完整信息','finance_statement_modify.html',960,600)">查看完整信息
+                </button>
+            </th>
+        </tr>
+
+        <tr>
+            <th>1</th>
+            <th>15313512</th>
+            <th>問心</th>
+            <th>java</th>
+            <th>五一校区</th>
+            <th>w170902j</th>
+            <th>分期</th>
+            <th>17800</th>
+            <th>5800</th>
+            <th></th>
+            <th>不需要教材</th>
+            <th></th>
+            <th></th>
+            <th>宿舍</th>
+            <th>
+                <button type="button" class="btn btn-success-outline radius"
+                        onclick="layer_show('查看完整信息','finance_statement_modify.html',960,600)">查看完整信息
+                </button>
+            </th>
+        </tr>
+
+        <tr>
+            <th>1</th>
+            <th>15313512</th>
+            <th>問心</th>
+            <th>java</th>
+            <th>五一校区</th>
+            <th>w170902j</th>
+            <th>分期</th>
+            <th>17800</th>
+            <th>5800</th>
+            <th></th>
+            <th>不需要教材</th>
+            <th></th>
+            <th></th>
+            <th>宿舍</th>
+            <th>
+                <button type="button" class="btn btn-success-outline radius"
+                        onclick="layer_show('查看完整信息','finance_statement_modify.html',960,600)">查看完整信息
+                </button>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+    <!-- ！！表格数据 -->
+
+    <!--分页容器-->
+    <div id="page" style="text-align:right"></div>
+    <!-- ！！分页容器 -->
+</div>
+<script src="../js/jquery.2.1.4.min.js"></script>
+<script src="../libs/WdatePicker/WdatePicker.js"></script>
+<script src="../libs/layui/layui.js"></script>
+<script src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<script src="../libs/h-ui/js/H-ui.min.js"></script>
+<script>
+    layui.use(['laypage', 'layer'], function () {
+        let laypage = layui.laypage
+            , layer = layui.layer;
+        //完整功能
+        laypage.render({
+            elem: 'page'
+            , count: 100
+            , limits: [15, 30, 50, 100]
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新增备案数据</title>
+    <link rel="stylesheet" href="../favicon.ico">
+    <link rel="stylesheet" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="../libs/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<article class="page-container">
+    <form class="form form-horizontal">
+
+        <div class="row cl" style="margin-top: 5px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">学员姓名：</label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input type="text" class="input-text f-l" style="width: 90%" value="张三">
+                <span class="newer-necessary">*</span>
+            </div>
+            <label class="form-label col-xs-1 col-sm-2 ">已上课时：</label>
+            <div class="formControls col-xs-2 col-sm-3">
+                <input type="text" class="input-text f-l" style="width: 90%" value="224">
+                <span class="newer-necessary">*</span>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 5px">
+            <label class="form-label col-xs-1 col-sm-2  col-sm-offset-1">异动类型：</label>
+            <div class="formControls col-xs-2 col-sm-3 cl">
+                <span class="select-box f-l" style="width: 90%">
+                    <select class="select" size="1">
+                        <option value="">请选择</option>
+                        <option value="" selected>转班</option>
+                        <option value="">休学</option>
+                        <option value="">转校</option>
+                        <option value="">复学</option>
+                        <option value="">退学</option>
+                        <option value="">提前退学</option>
+                        <option value="">其他</option>
+                    </select>
+			    </span>
+                <span class="newer-necessary">*</span>
+            </div>
+            <label class="form-label col-xs-1 col-sm-2">转入班级：</label>
+            <div class="formControls col-xs-2 col-sm-3 cl">
+                    <span class="select-box f-l" style="width: 90%">
+                        <select class="select" size="1" >
+                            <option value="">请选择</option>
+                            <option value="">W170902J</option>
+                            <option value="" selected>W180302J</option>
+                            <option value="">W180202J</option>
+                        </select>
+                    </span>
+                <span class="newer-necessary">*</span>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 5px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">异动时间：</label>
+            <div class="formControls col-xs-2 col-sm-3 cl">
+                <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'replyBeginDate\')||\'%y-%M-%d\'}' })"
+                       id="replyBeginDate"
+                       class="input-text Wdate newer-point" style="width: 90%">
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 5px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">情况说明：</label>
+            <div class="formControls col-xs-6 col-sm-8">
+                <textarea class="textarea" style="width: 96.5%;height: 70px"></textarea>
+                <p class="textarea-numberbar text-r mr-50"><em class="textarea-length"></em>/500</p>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 5px">
+            <label class="form-label col-xs-1 col-sm-2 col-xs-offset-2 col-sm-offset-1">处理方式：</label>
+            <div class="formControls col-xs-6 col-sm-8">
+                <textarea class="textarea" style="width: 96.5%;height: 70px"></textarea>
+                <p class="textarea-numberbar text-r mr-50"><em class="textarea-length"></em>/500</p>
+            </div>
+        </div>
+
+        <div class="row cl" style="margin-top: 5px">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-3 col-sm-offset-2 text-c">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;异动&nbsp;&nbsp;">
+                <input class="btn btn-default radius" type="reset" value="&nbsp;&nbsp;重置&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<script src="../js/jquery.2.1.4.min.js"></script>
+<script src="../libs/WdatePicker/WdatePicker.js"></script>
+<script src="../libs/layui/layui.js"></script>
+<script src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<script src="../libs/h-ui/js/H-ui.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

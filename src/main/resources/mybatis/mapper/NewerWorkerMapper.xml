@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.newer.sms.mapper.NewerWorkerMapper">
+
+    <resultMap id="result-worker" type="NewerWorker">
+        <id property="workerId" column="worker_id"/>
+        <result property="workerName" column="worker_name"/>
+        <result property="jid" column="jid"/>
+        <result property="sex" column="sex"/>
+        <result property="birth" column="birth"/>
+        <result property="telephone" column="telephone"/>
+
+        <association property="newerJob" column="jid" javaType="NewerJob">
+            <id property="jid" column="jid"/>
+            <result property="jname" column="jname"/>
+            <result property="responsibility" column="responsibility"/>
+        </association>
+    </resultMap>
+
+
+    <select id="findAll" resultMap="result-worker">
+        select worker_id,worker_name,sex,birth,telephone,w.jid,jname,responsibility
+        from newer_worker w left join newer_job j on w.jid = j.jid
+        <where>
+            1=1
+            <if test="jid != null and jid>0">
+                and w.jid=#{jid}
+            </if>
+        </where>
+        order by w.worker_id desc
+    </select>
+
+
+</mapper>

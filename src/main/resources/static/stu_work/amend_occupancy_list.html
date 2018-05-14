@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>修改入住人员信息</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+
+</head>
+<body>
+<section class="aui-content">
+    <div style="height:20px;"></div>
+    <div class="aui-content-up">
+        <form action="" name="form1" method="post">
+            <div class="aui-content-up-form">
+                <h2>修改入住人员信息</h2>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    入住姓名 <em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="yourname" onBlur="checkna()" required id="1" placeholder="请输入身份证名字">
+                    <span class="tips" id="divname">长度1~6个字符</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    入住房间号 <em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youphone" id="2" placeholder="请输入入住的房号" onBlur="checkpsd1()" required/>
+                    <span class="tips" id="phone">必须是11位的数字</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    床号 <em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="3" placeholder="请输入入住的床号" onBlur="checkpsd2()" required/>
+                    <span class="tips" id="zizhi">必须是18位社会信用代码</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    收费标准
+                </label>
+                <div class="aui-form-input">
+                    <input type="password" class="aui-form-control-two" name="youziz" id="4" placeholder="请输入收费标准" onBlur="checkpsd2()" required/>                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    缴费日期
+                </label>
+                <div class="aui-form-input">
+                    <input type="date" class="aui-form-control-two" name="youziz" id="5" placeholder="请输入缴费日期" onBlur="checkpsd2()" required/>                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    到期日期
+                </label>
+                <div class="aui-form-input">
+                    <input type="date" class="aui-form-control-two" name="youziz" id="6" placeholder="请输入到期日期" onBlur="checkpsd2()" required/>            </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    实收
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="7" placeholder="请输入实际收费" onBlur="checkpsd2()" required/>            </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    票号
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="8" placeholder="请输入票号" onBlur="checkpsd2()" required/>            </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    押金
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="9" placeholder="请输入押金" onBlur="checkpsd2()" required/>            </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    奖惩
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="10" placeholder="请输入奖惩" onBlur="checkpsd2()" required/>            </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    支付宝
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="11" placeholder="请输入支付宝" onBlur="checkpsd2()" required/>            </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    退还金额
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="12" placeholder="请输入退还金额" onBlur="checkpsd2()" required/>            </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    退宿原因
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="13" placeholder="请输入退宿原因" onBlur="checkpsd2()" required/>                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    备注
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="14" placeholder="请输入备注" onBlur="checkpsd2()" required/>                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    学籍号
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="15" placeholder="请输入学籍号" onBlur="checkpsd2()" required/>                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    票号照片<em>*</em>
+                    <span>小于5M</span>
+                </label>
+                <div class="aui-form-input">
+                    <div class="aui-content-img-box aui-content-full">
+                        <div class="aui-photo aui-up-img clear">
+                            <section class="aui-file-up fl">
+                                <img src="../img/up.png" class="add-img">
+                                <input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple/>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aui-form-group-text">
+                <button class="aui-btn aui-btn-account">保存并提交审核</button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- mask begin -->
+<div class="aui-mask aui-works-mask">
+    <div class="aui-mask-content">
+        <p class="aui-delete-text">确定要删除你上传的？</p>
+        <p class="aui-check-text">
+            <span class="aui-delete aui-accept-ok">确定</span>
+            <span class="aui-accept-no">取消</span>
+        </p>
+    </div>
+</div>
+<!-- mask end -->
+<script type="text/javascript" src="../js/jquery.2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/up.js"></script>
+<script type="text/javascript">
+
+
+    //验证姓名
+    function checkna(){
+
+        na=form1.yourname.value;
+
+        if( na.length <1 || na.length >6)
+
+        {
+
+            divname.innerHTML='<font class="tips_false">长度是1~6个字符</font>';
+
+
+
+        }else{
+
+            divname.innerHTML='<font class="tips_true">输入正确</font>';
+
+
+
+        }
+
+
+
+    }
+
+    //验证手机号码
+    function checkpsd1(){
+
+        na=form1.youphone.value;
+
+        if( na.length <11 || na.length >11)
+
+        {
+
+            phone.innerHTML='<font class="tips_false">必须是11位的数字</font>';
+
+
+
+        }else{
+
+            phone.innerHTML='<font class="tips_true">输入正确</font>';
+
+
+
+        }
+
+
+
+    }
+
+    //验证社会统一代码
+    function checkpsd2(){
+
+        na=form1.youziz.value;
+
+        if( na.length <18 || na.length >18)
+
+        {
+
+            zizhi.innerHTML='<font class="tips_false">必须是18位社会信用代码</font>';
+
+
+
+        }else{
+
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+</script>
+</body>
+</html>

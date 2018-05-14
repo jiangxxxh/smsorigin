@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>市场数据备案</title>
+    <link rel="stylesheet" href="../favicon.ico">
+    <link rel="stylesheet" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="../libs/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .table th, .table td {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<!-- 面包屑导航栏 -->
+<nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 市场管理
+    <span class="c-gray en">&gt;</span> 异动管理
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+<!-- ！！面包屑导航栏 -->
+<div class="page-container">
+
+    <!-- 条件查询 -->
+    <form class="Huiform ml-10" method="post" target="_self">
+        <!-- 整排查询框 -->
+        <div class="row cl">
+            <label class="newer-form-label">学员姓名：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+
+            <label class="newer-form-label">异动状态：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                        <option value="">转班</option>
+                        <option value="">休学</option>
+                        <option value="">转校</option>
+                        <option value="">复学</option>
+                        <option value="">退学</option>
+                        <option value="">提前退学</option>
+                        <option value="">其他</option>
+                </select>
+            </span>
+
+
+
+
+            <label class="newer-form-label">回复时间：</label>
+            <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'replyBeginDate\')||\'%y-%M-%d\'}' })"
+                   id="replyBeginDate"
+                   class="input-text Wdate newer-form-inline newer-point newer-select">
+            <label class="newer-form-label" style="text-align: center">—</label>
+            <input type="text"
+                   onfocus="WdatePicker({ consultEndDate:'#F{$dp.$D(\'replyEndDate\')}',maxDate:'%y-%M-%d' })"
+                   id="replyEndDate"
+                   class="input-text Wdate newer-form-inline newer-point newer-select">
+        </div>
+        <!-- ！！整排查询框 -->
+        <!-- 整排查询框 -->
+        <div class="row cl mt-5">
+
+            <label class="newer-form-label">异动校区：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">五一校区</option>
+                    <option value="">林科大校区</option>
+                    <option value="">涉外校区</option>
+                </select>
+            </span>
+            <label class="newer-form-label">异动班级：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">W170902J</option>
+                    <option value="">W180302J</option>
+                    <option value="">W180202J</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">是否欠费：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">是</option>
+                    <option value="">否</option>
+                </select>
+            </span>
+            <button class="btn btn-primary-outline radius size-S radius ml-20" type="button">查询</button>
+        <!-- ！！整排查询框 -->
+        </div>
+    </form>
+    <br><br><br><br>
+    <!-- ！！条件查询 -->
+
+    <!-- 功能按钮 -->
+    <!--<form class="Huiform mt-30">-->
+        <!--<div class="row cl text-r pr-20">-->
+            <!--<input class="btn newer-form-btn btn-primary size-MINI radius" type="button" value="新增上门咨询"-->
+                   <!--onclick="layer_show($(this).val(),'market_onside_register_add.html',960,640)">-->
+            <!--<input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="查看上门咨询"-->
+                   <!--disabled-->
+                   <!--onclick="layer_show($(this).val(),'market_stu_eception_add.html',960,580)">-->
+            <!--<input class="btn newer-form-btn btn-primary size-MINI radius" type="button" value="新增备案数据"-->
+                   <!--onclick="layer_show($(this).val(),'market_stu_detail.html',960,620)">-->
+            <!--<input class="btn newer-form-btn btn-primary size-MINI radius" type="button" value="查看备案数据"-->
+                   <!--onclick="layer_show($(this).val(),'market_register.html',960,580)">-->
+            <!--<input class="btn newer-form-btn btn-primary size-MINI radius" type="button" disabled value="指派咨询师">-->
+            <!--<input class="btn newer-form-btn btn-primary size-MINI radius" type="button" value="导入备案数据"-->
+                   <!--onclick="layer_show($(this).val(),'market_register_upload.html',960,220)">-->
+            <!--<input class="btn  btn-primary size-MINI radius newer-form-btn" type="button" value="查看咨询记录"-->
+                   <!--onclick="layer_show($(this).val(),'market_register_message_list.html',960,600)">-->
+        <!--</div>-->
+    <!--</form>-->
+    <!-- !!功能按钮 -->
+    <!-- 表格数据 -->
+    <table class="table table-border table-bg table-bordered mt-10">
+        <thead>
+        <tr class="text-c" lay-size="sm">
+            <th>序号</th>
+            <th>学籍号</th>
+            <th>姓名</th>
+            <th>开课时间</th>
+            <th>已上课时数</th>
+            <th>异动班级</th>
+            <th>转入班级</th>
+            <th>是否欠费</th>
+            <th>异动校区</th>
+            <th>转入校区</th>
+            <th>异动状态</th>
+            <th>教员</th>
+            <th>督导</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="text-c" lay-size="sm">
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>1</td>
+            <td>W170902J01</td>
+            <td>张三</td>
+            <td>38</td>
+            <td>2017-08-07</td>
+            <td>否</td>
+            <td>W170902J</td>
+            <td>W171001J</td>
+            <td>五一校区</td>
+            <td></td>
+            <td>转班</td>
+            <td>啊啊啊</td>
+            <td>哦哦哦</td>
+            <td><input class="btn  size-MINI btn-success-outline radius" type="button" value="查看"
+                       onclick="layer_show($(this).val(),'stu_exception_detail.html',960,620)">&nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- ！！表格数据 -->
+
+    <!--分页容器-->
+    <div id="page" style="text-align:right"></div>
+    <!-- ！！分页容器 -->
+</div>
+<script src="../js/jquery.2.1.4.min.js"></script>
+<script src="../libs/WdatePicker/WdatePicker.js"></script>
+<script src="../libs/layui/layui.js"></script>
+<script src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<script src="../libs/h-ui/js/H-ui.min.js"></script>
+<script src="../js/script.js"></script>
+<script>
+
+    layui.use(['laypage', 'layer'], function () {
+        let laypage = layui.laypage
+            , layer = layui.layer;
+        //完整功能
+        laypage.render({
+            elem: 'page'
+            , count: 100
+            , limits: [15, 30, 50, 100]
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+    });
+</script>
+</body>
+</html>

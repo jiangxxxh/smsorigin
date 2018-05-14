@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>报表导出</title>
+    <link rel="stylesheet" href="../favicon.ico">
+    <link rel="stylesheet" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="../libs/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<article class="page-container">
+    <form class="form form-horizontal" name="ff">
+        <div class="row cl">
+            <label class="form-label col-xs-5 col-sm-3 col-md-offset-6">报表类型：</label>
+            <div class="formControls col-xs-5 col-sm-3 cl">
+                <span class="select-box col-xs-2 f-l" style="width: 90%">
+                    <select class="select" size="1" id="report_type">
+                        <option value="">请选择</option>
+                        <option value="1">台帐表</option>
+                        <option value="">月度财务报表</option>
+                        <option value="">财务核查表</option>
+                    </select>
+			    </span><span class="newer-necessary">*</span>
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-5 col-sm-3 col-md-offset-6">校区：</label>
+            <div class="formControls col-xs-5 col-sm-3 cl">
+                <span class="select-box col-xs-2 f-l" style="width: 90%">
+                    <select class="select" size="1">
+                        <option value="">请选择</option>
+                        <option value="">五一校区</option>
+                        <option value="">林科大校区</option>
+                        <option value="">涉外小区</option>
+                    </select>
+			    </span><span class="newer-necessary">*</span>
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-5 col-sm-3 col-sm-offset-1">班级：</label>
+            <div class="formControls col-xs-5 col-sm-3 cl">
+                <span class="select-box" style="width: 90%">
+                    <select class="select" size="1">
+                        <option value="">请选择</option>
+                        <option value="">w170902j</option>
+                        <option value="">w180504j</option>
+                        <option value="">w180504j</option>
+                    </select>
+			    </span>
+                <span class="newer-necessary">*</span>
+            </div>
+        </div>
+
+        <div class="row cl" id="divd">
+            <label class="form-label col-xs-5 col-sm-3 col-sm-offset-1">缴费类型：</label>
+            <div class="formControls col-xs-5 col-sm-3 cl">
+                <span class="select-box" style="width: 90%">
+                    <select class="select" size="1">
+                        <option value="">请选择</option>
+                        <option value="">学费</option>
+                        <option value="">宿舍费</option>
+                        <option value="">教材费</option>
+                    </select>
+			    </span>
+                <span class="newer-necessary">*</span>
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-5 col-sm-3 col-sm-offset-1">导出月份：</label>
+            <div class="formControls col-xs-5 col-sm-3">
+                <input type="month" class="input-text f-l" style="width: 90%" id="outMonth">
+                <span class="newer-necessary">*</span>
+            </div>
+        </div>
+
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="button" onclick="fff()" value="&nbsp;&nbsp;导出&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<script src="../js/jquery.2.1.4.min.js"></script>
+<script src="../libs/WdatePicker/WdatePicker.js"></script>
+<script src="../libs/layui/layui.js"></script>
+<script src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<script src="../libs/h-ui/js/H-ui.min.js"></script>
+<script>
+    $(window).on('load', () => {
+        $('#divd').hide()
+    });
+
+    function fff() {
+        alert($('#outMonth').val());
+
+    }
+
+    $('#report_type').change(() => {    // 报表类型
+        alert($('#report_type').val());
+        if ($('#report_type').val() == 1) {
+            $('#divd').show()
+        } else {
+            $('#divd').hide()
+        }
+    });
+
+</script>
+</body>
+</html>

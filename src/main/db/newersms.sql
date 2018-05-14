@@ -106,19 +106,22 @@ values (6, null, 210, '学工管理', '学工管理', null, '1');
 insert into SYS_MENUS (id, parent_id, seq, name, descn, link_url, status)
 values (7, null, 220, '财务管理', '财务管理', null, '1');
 
+
 -- 财务管理 二级菜单
-insert into SYS_MENUS (id, parent_id, seq, name, descn, link_url, status)
-values (8, 7, 221, '缴费管理', '缴费管理', 'finance/finance_record.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (7, 221, '缴费管理', '缴费管理', 'finance/finance_record.html', '1');
 
 -- 市场管理 二级菜单
-insert into SYS_MENUS (id, parent_id, seq, name, descn, link_url, status)
-values (9, 5, 201, '市场数据备案', '市场数据备案', 'market/market_register_list.html', '1');
-insert into SYS_MENUS (id, parent_id, seq, name, descn, link_url, status)
-values (10, 5, 202, '上门市场数据备案', '上门市场数据备案', 'market/market_onside_register_list.html', '1');
-insert into SYS_MENUS (id, parent_id, seq, name, descn, link_url, status)
-values (11, 5, 203, '备案跟踪记录', '备案跟踪记录', 'market/market_record_list.html', '1');
-insert into SYS_MENUS (id, parent_id, seq, name, descn, link_url, status)
-values (12, 5, 204, '预科班查询页面', '预科班查询页面', 'market/pre_class_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (5, 201, '市场数据备案', '市场数据备案', 'market/market_register_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (5, 202, '上门咨询管理', '上门咨询管理', 'market/market_onside_register_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (5, 203, '备案跟踪记录', '备案跟踪记录', 'market/market_register_record_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (5, 204, '预科班级查询', '预科班级查询', 'market/market_pre_class_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (5, 205, '试听学员查询', '试听学员查询', 'market/market_try_listen_list.html', '1');
 
 -- 学工管理 二级菜单
 insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
@@ -128,7 +131,7 @@ values (6, 212, '学员日常管理', '学员日常管理', 'stu_work/stu_daily.
 insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
 values (6, 213, '学员异动查询', '学员异动查询', 'stu_work/stu_exception.html', '1');
 insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
-values (6, 214, '学员谈话一览表', '学员谈话一览表', 'stu_work/interview.html', '1');
+values (6, 214, '学员谈话管理', '学员谈话管理', 'stu_work/interview.html', '1');
 insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
 values (6, 215, '班级资料管理', '班级资料管理', 'stu_work/opening_campus_list.html', '1');
 insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
@@ -139,8 +142,35 @@ insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
 values (6, 218, '学员宿舍管理', '学员宿舍管理', 'stu_work/dormitory_management_list.html', '1');
 insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
 values (6, 219, '宿舍到期查询', '宿舍到期查询', 'stu_work/expiry_domitories_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (6, 240, '学员毕业管理', '学员毕业管理', 'stu_work/graduation_list.html', '1');
 commit;
 
+-- 数据配置
+insert into SYS_MENUS (id,parent_id, seq, name, descn, link_url, status)
+values (23, null, 230, '数据配置', '数据配置', null, '1');
+
+-- 数据配置 二级菜单
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (23, 231, '职位名称管理', '职位名称管理', 'config/work_name_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (23, 232, '工作人员管理', '工作人员管理', 'config/worker_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (23, 233, '信息来源管理', '信息来源管理', 'config/info_source_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (23, 234, '学员分类管理', '学员分类管理', 'config/stu_tag_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (23, 235, '缴费类型管理', '缴费类型管理', 'config/fee_type_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (23, 236, '专业方向管理', '专业方向管理', 'config/major_list.html', '1');
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (23, 237, '校区管理', '校区管理', 'config/campus_list.html', '1');
+commit ;
+
+-- 财务管理 二级菜单
+insert into SYS_MENUS (parent_id, seq, name, descn, link_url, status)
+values (7, 222, '财务核查', '财务核查', 'finance/finance_statement.html', '1');
+commit ;
 
 
 -- 角色 -------------------------------------------------
@@ -207,6 +237,30 @@ values (20, 1);
 insert into SYS_MENU_ROLE (menu_id, role_id)
 values (21, 1);
 
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (22, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (23, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (24, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (25, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (26, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (27, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (28, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (29, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (30, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (31, 1);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (32, 1);
+commit ;
+
 -- 校长
 insert into SYS_MENU_ROLE (menu_id, role_id)
 values (5, 2);
@@ -242,6 +296,12 @@ insert into SYS_MENU_ROLE (menu_id, role_id)
 values (20, 2);
 insert into SYS_MENU_ROLE (menu_id, role_id)
 values (21, 2);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (22, 2);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (31, 2);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (32, 2);
 
 -- 副校长
 insert into SYS_MENU_ROLE (menu_id, role_id)
@@ -278,6 +338,12 @@ insert into SYS_MENU_ROLE (menu_id, role_id)
 values (20, 3);
 insert into SYS_MENU_ROLE (menu_id, role_id)
 values (21, 3);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (22, 3);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (31, 3);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (32, 3);
 
 -- 市场主管
 insert into SYS_MENU_ROLE (menu_id, role_id)
@@ -294,6 +360,10 @@ insert into SYS_MENU_ROLE (menu_id, role_id)
 values (11, 4);
 insert into SYS_MENU_ROLE (menu_id, role_id)
 values (12, 4);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (13, 4);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (31, 4);
 
 -- 学工主管
 insert into SYS_MENU_ROLE (menu_id, role_id)
@@ -302,8 +372,6 @@ insert into SYS_MENU_ROLE (menu_id, role_id)
 values (7, 5);
 insert into SYS_MENU_ROLE (menu_id, role_id)
 values (8, 5);
-insert into SYS_MENU_ROLE (menu_id, role_id)
-values (13, 5);
 insert into SYS_MENU_ROLE (menu_id, role_id)
 values (14, 5);
 insert into SYS_MENU_ROLE (menu_id, role_id)
@@ -320,6 +388,12 @@ insert into SYS_MENU_ROLE (menu_id, role_id)
 values (20, 5);
 insert into SYS_MENU_ROLE (menu_id, role_id)
 values (21, 5);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (22, 5);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (31, 5);
+insert into SYS_MENU_ROLE (menu_id, role_id)
+values (32, 5);
 commit;
 
 

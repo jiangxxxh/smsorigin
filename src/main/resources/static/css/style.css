@@ -1,0 +1,54 @@
+.newer-form-label {
+    width: 70px;
+    padding: 0 5px;
+    display: inline-block;
+    text-align: right;
+}
+
+.newer-form-inline {
+    width: 120px;
+}
+
+.newer-form-btn {
+    width: 100px;
+    padding: 0;
+    height: 18px;
+    line-height: 18px;
+}
+
+.newer-select {
+    height: 27px;
+    padding: 1px 5px;
+}
+
+.newer-point {
+    cursor: pointer;
+}
+
+.newer-a {
+    text-decoration: underline;
+    color: blue;
+}
+
+.newer-necessary {
+    color: red;
+    height: 30px;
+    line-height: 30px;
+}
+
+.btn:disabled {
+    color: #8e8989;
+    background-color: #efefef;
+    border-color: #dedada;
+}
+
+.newer-bgColor {
+    background-color: #0f9ae0;
+}
+
+.newer-btn-s{
+    padding: 0 5px;
+    height: 20px;
+    line-height: 20px
+}
+

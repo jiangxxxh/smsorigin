@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上门咨询管理</title>
+    <link rel="stylesheet" href="../favicon.ico">
+    <link rel="stylesheet" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="../libs/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .table th, .table td {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<!-- 面包屑导航栏 -->
+<nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 市场管理
+    <span class="c-gray en">&gt;</span> 上门咨询管理
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+<!-- ！！面包屑导航栏 -->
+<div class="page-container">
+
+    <!-- 条件查询 -->
+    <form class="Huiform ml-10" method="post" target="_self">
+        <!-- 整排查询框 -->
+        <div class="row cl">
+            <label class="newer-form-label">学员姓名：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+
+            <label class="newer-form-label">联系电话：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+
+            <label class="newer-form-label">毕业学校：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+
+            <label class="newer-form-label">订座班级：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">W170902J</option>
+                    <option value="">W170903J</option>
+                    <option value="">W170903J</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">进入班级：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">W170902J</option>
+                    <option value="">W170902J</option>
+                    <option value="">W170902J</option>
+                </select>
+            </span>
+        </div>
+        <!-- ！！整排查询框 -->
+        <!-- 整排查询框 -->
+        <div class="row cl mt-5">
+            <label class="newer-form-label">咨询师：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                     <option value="" selected>所有</option>
+                    <option value="">张三</option>
+                    <option value="">李四</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">招生专员：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">张三</option>
+                    <option value="">李四</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">信息来源：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">招生代理</option>
+                    <option value="">工作人员</option>
+                    <option value="">亲人/老师/同学</option>
+                    <option value="">网站</option>
+                    <option value="">其他</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">所在校区：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">五一校区</option>
+                    <option value="">林科大校区</option>
+                    <option value="">涉外校区</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">课程体系：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">java开发</option>
+                    <option value="">web前端</option>
+                </select>
+            </span>
+        </div>
+        <!-- ！！整排查询框 -->
+        <!-- 整排查询框 -->
+        <div class="row cl mt-5">
+            <label class="newer-form-label">学员分类：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">A1</option>
+                    <option value="">A2</option>
+                    <option value="">A3</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">咨询状态：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">上门咨询</option>
+                    <option value="">订座</option>
+                    <option value="">进班</option>
+                    <option value="">退学</option>
+                    <option value="">交费未进班</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">咨询进度：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">跟进</option>
+                    <option value="">放弃</option>
+                    <option value="">待定</option>
+                </select>
+            </span>
+            <span class="select-box newer-form-label newer-select" style="padding: 0;width: 80px;border: none">
+                <select class="select" size="1" style="padding: 0">
+                    <option value="" selected>咨询时间</option>
+                    <option value="">进班时间</option>
+                    <option value="">订座时间</option>
+                    <option value="">补费时间</option>
+                    <option value="">退学时间</option>
+                </select>
+            </span>
+            <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'replyBeginDate\')||\'%y-%M-%d\'}' })"
+                   id="replyBeginDate"
+                   class="input-text Wdate newer-form-inline newer-point newer-select">
+            <label class="newer-form-label" style="text-align: center">—</label>
+            <input type="text"
+                   onfocus="WdatePicker({ consultEndDate:'#F{$dp.$D(\'replyEndDate\')}',maxDate:'%y-%M-%d' })"
+                   id="replyEndDate"
+                   class="input-text Wdate newer-form-inline newer-point newer-select">
+
+            <button class="btn btn-primary size-S radius ml-20" type="button">查询</button>
+        </div>
+        <!-- ！！整排查询框 -->
+    </form>
+    <!-- ！！条件查询 -->
+
+    <!-- 功能按钮 -->
+    <form class="Huiform mt-30">
+        <div class="row cl text-r pr-20">
+            <input class="btn newer-form-btn btn-success size-MINI radius" type="button" value="新增上门咨询"
+                   onclick="layer_show($(this).val(),'market_onside_register_add.html',960,640)" id="btnSave">
+    <!--        <input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="查看上门咨询"
+                   disabled
+                   onclick="layer_show($(this).val(),'market_onside_register.html',960,580)">
+            <input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="修改上门咨询"
+                   disabled
+                   onclick="layer_show($(this).val(),'market_onside_register_add.html',960,640)">-->
+<!--            <input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="咨询进度"
+                   disabled
+                   onclick="layer_show($(this).val(),'market_register_add.html',960,620)">-->
+            <input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="指派咨询师"
+                   disabled
+                   onclick="layer_show($(this).val(),'market_add_counselor.html',400,280)">
+            <input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="学员补费"
+                   disabled
+                   onclick="layer.msg('开发中....')">
+            <input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="学员试听"
+                   disabled
+                   onclick="layer_show($(this).val(),'market_stu_select_class.html',420,280,3)">
+            <input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="学员订座"
+                   disabled
+                   onclick="layer_show($(this).val(),'market_stu_select_class.html',420,280)">
+            <input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="学员进班"
+                   disabled
+                   onclick="layer_show($(this).val(),'market_stu_select_class.html',420,280)">
+            <input class="btn newer-form-btn btn-primary size-MINI radius newer-disabled" type="button" value="学员退学"
+                   disabled
+                   onclick="drop_out($('#id').val(),$('#2').find('td:eq(1)').text())">
+        </div>
+    </form>
+    <!-- !!功能按钮 -->
+    <!-- 表格数据 -->
+    <input type="hidden" id="id">
+    <table class="table table-border table-bg table-bordered mt-10">
+        <thead>
+        <tr class="text-c">
+            <th>序号</th>
+            <th>学生姓名</th>
+            <th>学校</th>
+            <th>学历</th>
+            <th>信息来源</th>
+            <th>学员状态</th>
+            <th>咨询师</th>
+            <th>招生专员</th>
+            <th>咨询时间</th>
+            <th>缴费金额</th>
+            <th>试听班级</th>
+            <th>订座班级</th>
+            <th>进入班级</th>
+            <th>班主任</th>
+            <th>录入人</th>
+        </tr>
+        </thead>
+        <tbody class="text-c">
+        <tr id="1">
+            <td>1</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="2">
+            <td>2</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td><a class="newer-a" href="">前往缴费</a></td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="3">
+            <td>3</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td><a class="newer-a" href="">前往缴费</a></td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="4">
+            <td>4</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td><a class="newer-a" href="">前往缴费</a></td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="5">
+            <td>5</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td><a class="newer-a" href="">前往缴费</a></td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="6">
+            <td>6</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td><a class="newer-a" href="">前往缴费</a></td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="7">
+            <td>7</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="8">
+            <td>8</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="9">
+            <td>9</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="10">
+            <td>10</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="11">
+            <td>11</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="12">
+            <td>12</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="13">
+            <td>13</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="14">
+            <td>14</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+
+        <tr id="15">
+            <td>15</td>
+            <td>张三</td>
+            <td>林科大</td>
+            <td>自动化</td>
+            <td>网站</td>
+            <td>待业</td>
+            <td>吴佳</td>
+            <td>李四</td>
+            <td>2018-02-01</td>
+            <td>500</td>
+            <td>W170902J</td>
+            <td>W170903J</td>
+            <td>W170903J</td>
+            <td>王五</td>
+            <td>赵六</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- ！！表格数据 -->
+
+    <!--分页容器-->
+    <div id="page" style="text-align:right"></div>
+    <!-- ！！分页容器 -->
+</div>
+<script src="../js/jquery.2.1.4.min.js"></script>
+<script src="../libs/WdatePicker/WdatePicker.js"></script>
+<script src="../libs/layui/layui.js"></script>
+<script src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<script src="../libs/h-ui/js/H-ui.min.js"></script>
+<script src="../js/script.js"></script>
+<script>
+    layui.use(['laypage', 'layer'], function () {
+        let laypage = layui.laypage
+            , layer = layui.layer;
+        //完整功能
+        laypage.render({
+            elem: 'page'
+            , count: 100
+            , limits: [15, 30, 50, 100]
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+    });
+
+    // 表格行颜色变化脚本
+    $(function () {
+        // 1.上色
+        $('tbody>tr').click(function () {
+            // 1.1 该行变色，其他行去色
+            $(this).siblings().removeClass('newer-bgColor').end().addClass('newer-bgColor');
+            // 1.2 启用限制功能按钮
+            $('.newer-disabled').prop('disabled', false);
+            $('#btnSave').val('修改上门咨询').removeClass('btn-success').addClass('btn-primary');
+            // 1.3 隐藏表单id重新赋值
+            $('#id').val($(this).attr('id'));
+            // 测试传参：id
+            alert($(this).attr('id'))
+        });
+        // 2.去色
+        $(document).click(function (ev) {
+            let oEvent = ev || event; // 获得事件对象本身
+            let target = $(oEvent.target); // oEvent.target 获得事件对象的html元素
+            // 当点击对象的元素不为td或button时
+            if (!target.is('td') && !target.is('input') && !target.is('button')) { // is() 用于元素之间的比较
+                // 2.1 所有行去色
+                $('tbody>tr').removeClass('newer-bgColor');
+                // 2.2 禁用限制功能按钮
+                $('.newer-disabled').prop('disabled', true);
+                $('#btnSave').val('新增上门咨询').removeClass('btn-primary').addClass('btn-success');
+                // 2.3 隐藏表单id归0btn-success
+                $('#id').val(0);
+            }
+        });
+    });
+
+    function drop_out(id, name) {
+        let index = layer.confirm("<span class='c-red'>" + name + "</span>学员确定要退学么？", () => {
+            layer.msg("退学成功!", {icon: 1, time: 1000});
+
+            setTimeout(() => {
+                queryQuestion("", null);
+            }, 800)
+        })
+    }
+</script>
+</body>
+</html>

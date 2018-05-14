@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>校区开班情况</title>
+
+    <link rel="stylesheet" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/skin/default/skin.css" id="skin">
+    <link rel="stylesheet" href="../libs/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <style>
+        .on_focus{
+            background-color: #BEEBEE;
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i>&nbsp;首页
+    <span class="c-green en">&gt;</span>校区开班情况
+    <a class="btn btn-success radius r"
+       style="line-height: 1.6em;margin-top: 3px"
+       href="javascript:location.replace(location.href);"
+       title="刷新">
+        <i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+
+<div class="page-container">
+
+    <!-- 查询条件 -->
+    <form class="Huiform ml-10" method="post" target="_self">
+        <div class="row cl">
+            <label class="newer-form-label">班级名称：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+
+            <label class="newer-form-label">校区：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+
+            <label class="newer-form-label">方向：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">Java</option>
+                    <option value="">测试</option>
+                    <option value="">前端</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">班级状态：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">在读</option>
+                    <option value="">毕业</option>
+                </select>
+            </span>
+            <br><br>
+
+            <label class="newer-form-label">开班日期：</label>
+            <input type="date" class="input-text newer-form-inline size-S"> &nbsp;—&nbsp;
+            <input type="date" class="input-text newer-form-inline size-S">
+            &nbsp;&nbsp;
+            <button class="btn btn-secondary size-M radius">查询</button>
+        </div>
+    </form>
+
+    <!-- 功能按钮 -->
+    <form class="Huiform mt-20">
+        <div class="row cl text-r pr-20">
+            <input type="button" class="btn newer-form-inline btn-primary size-MINI radius"
+                   onclick="addGrades('报表','opening_campus_edit.html',960,460)" value="报表"></input>
+            <input type="button" class="btn newer-form-inline btn-primary size-MINI radius"
+                   onclick="addGrades('录入班级','opening_campus_edit.html',960,460)" value="录入班级"></input>
+            <button class="btn newer-form-inline btn-primary size-MINI radius" id="btnupdate" disabled
+                    onclick="updateTalk('修改班级','#',540,220)">修改谈话</button>
+        </div>
+    </form>
+
+    <div class="mt-20">
+        <table class="layui-table">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>校区</th>
+                <th>班级名称</th>
+                <th>督导</th>
+                <th>教员</th>
+                <th>方向</th>
+                <th>班级状态</th>
+                <th>开班日期</th>
+                <th>离校日期</th>
+                <th>开班人数</th>
+                <th>离校人数</th>
+                <th>班长</th>
+                <th>学委</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr  onclick="to_effect(this)">
+                <td>1</td>
+                <td>校区</td>
+                <td>班级名称</td>
+                <td>督导</td>
+                <td>教员</td>
+                <td>方向</td>
+                <td>班级状态</td>
+                <td>开班日期</td>
+                <td>离校日期</td>
+                <td>开班人数</td>
+                <td>离校人数</td>
+                <td>班长</td>
+                <td>学委</td>
+            </tr>
+
+            <tr onclick="to_effect(this)">
+                <td>2</td>
+                <td>校区</td>
+                <td>班级名称</td>
+                <td>督导</td>
+                <td>教员</td>
+                <td>方向</td>
+                <td>班级状态</td>
+                <td>开班日期</td>
+                <td>离校日期</td>
+                <td>开班人数</td>
+                <td>离校人数</td>
+                <td>班长</td>
+                <td>学委</td>
+            </tr>
+
+            <tr  onclick="to_effect(this)">
+                <td>15</td>
+                <td>校区</td>
+                <td>班级名称</td>
+                <td>督导</td>
+                <td>教员</td>
+                <td>方向</td>
+                <td>班级状态</td>
+                <td>开班日期</td>
+                <td>离校日期</td>
+                <td>开班人数</td>
+                <td>离校人数</td>
+                <td>班长</td>
+                <td>学委</td>
+            </tr>
+
+            </tbody>
+        </table>
+        <div id="talkpage" style="text-align: right">
+
+        </div>
+    </div>
+</div>
+
+<footer class="footer mt-20">
+    <div class="container">
+        Copyright &copy;2018-2028 SONG.net All Rights Reserved.
+    </div>
+</footer>
+
+<script type="text/javascript" src="../js/jquery.2.1.4.min.js"></script>
+<script type="text/javascript" src="../libs/layui/layui.all.js"></script>
+<!--<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>-->
+<script src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<!--<script src="../libs/layui/lay/modules/layer.js"></script>-->
+<!--<script src="../libs/layer/2.4/layer.js"></script>-->
+<script type="text/javascript">
+    $(window).on("load",()=>{
+        $(document).on("click",function (event) {
+            var tagname = event.target.nodeName;
+            //console.log(tagname)
+            if(!(tagname=="TD" || tagname=="td")){
+                $("#btnquery,#btnupdate").attr("disabled","disabled")
+                $("tr").removeClass("on_focus");
+            }
+        })
+    })
+
+
+    layui.use("laypage",function () {
+        let laypage = layui.laypage
+        //完整功能
+            laypage.render({
+            elem: 'talkpage'
+            ,count: 100
+            ,limits: [15, 30, 50, 100]
+            ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+            ,jump: function(obj,first){
+                //console.log(obj)
+            }
+        });
+    })
+
+    function to_effect(obj) {
+        // 按钮生效
+        $("#btnquery,#btnupdate").removeAttr("disabled")
+        // 当前对象增色 兄弟对象去色
+        $(obj).addClass("on_focus").siblings().removeClass("on_focus");
+    }
+
+
+    function addGrades(title,url,width,height) {
+        layer_show(title,url,width,height)
+        // alert("0")
+        // creatIframe(url,title)
+
+    }
+</script>
+
+
+</body>
+</html>

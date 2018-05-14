@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>考试成绩列表</title>
+
+    <link rel="stylesheet" href="../libs/h-ui/css/H-ui.min.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/css/H-ui.admin.css">
+    <link rel="stylesheet" href="../libs/Hui-iconfont/1.0.8/iconfont.css">
+    <link rel="stylesheet" href="../libs/h-ui.admin/skin/default/skin.css" id="skin">
+    <link rel="stylesheet" href="../libs/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <style>
+        .on_focus{
+            background-color: #BEEBEE;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i>&nbsp;首页
+    <span class="c-green en">&gt;</span>考试成绩列表
+    <a class="btn btn-success radius r"
+       style="line-height: 1.6em;margin-top: 3px"
+       href="javascript:location.replace(location.href);"
+       title="刷新">
+        <i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+
+<div class="page-container">
+
+    <!-- 查询条件 -->
+    <form class="Huiform ml-10" method="post" target="_self">
+        <div class="row cl">
+            <label class="newer-form-label">班级名称：</label>
+            <span class="select-box newer-form-inline newer-select">
+                <select class="select" size="1">
+                    <option value="" selected>所有</option>
+                    <option value="">W170902J</option>
+                    <option value="">W170902J</option>
+                    <option value="">W170902J</option>
+                </select>
+            </span>
+
+            <label class="newer-form-label">开班日期：</label>
+            <input type="date" class="input-text newer-form-inline size-S"> &nbsp;—&nbsp;
+            <input type="date" class="input-text newer-form-inline size-S">
+
+            <label class="newer-form-label">口碑人数：</label>
+            <input type="text" class="input-text newer-form-inline size-S">
+
+            &nbsp;&nbsp;
+            <button class="btn btn-secondary size-M radius">查询</button>
+        </div>
+    </form>
+
+    <!-- 功能按钮 -->
+    <form class="Huiform mt-20">
+        <div class="row cl text-r pr-20">
+            <input type="button" class="btn newer-form-inline btn-primary size-MINI radius"
+                   onclick="addGrades('报表','exam_result_edit.html',960,260)" value="报表"></input>
+            <input type="button" class="btn newer-form-inline btn-primary size-MINI radius"
+                   onclick="addGrades('修改','exam_result_edit.html',960,260)" value="修改"></input>
+            <button class="btn newer-form-inline btn-primary size-MINI radius" id="btnquery" disabled
+                    onclick="queryDifferent('异动详情','different_table_list.html',1060,500)">查看异动详情</button>
+        </div>
+    </form>
+
+    <div class="mt-20">
+        <table class="layui-table" lay-size="sm">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>校区</th>
+                <th>班级名称</th>
+                <th>督导</th>
+                <th>教员</th>
+                <th>开班日期</th>
+                <th>离校日期</th>
+                <th>班级类型</th>
+                <th>班级状态</th>
+                <th>开班人数</th>
+                <th>在读人数</th>
+                <th>考试人数</th>
+                <th>考试通过率</th>
+                <th>就业人数</th>
+                <th>就业率</th>
+                <th>口碑人数</th>
+                <th>流失人数</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr  onclick="to_effect(this)">
+                <td>1</td>
+                <td>校区</td>
+                <td>班级名称</td>
+                <td>督导</td>
+                <td>教员</td>
+                <td>开班日期</td>
+                <td>离校日期</td>
+                <td>班级类型</td>
+                <td>班级状态</td>
+                <td>开班人数</td>
+                <td>在读人数</td>
+                <td>考试人数</td>
+                <td>考试通过率</td>
+                <td>就业人数</td>
+                <td>就业率</td>
+                <td>口碑人数</td>
+                <td>流失人数</td>
+            </tr>
+
+            <tr onclick="to_effect(this)">
+                <td>2</td>
+                <td>校区</td>
+                <td>班级名称</td>
+                <td>督导</td>
+                <td>教员</td>
+                <td>开班日期</td>
+                <td>离校日期</td>
+                <td>班级类型</td>
+                <td>班级状态</td>
+                <td>开班人数</td>
+                <td>在读人数</td>
+                <td>考试人数</td>
+                <td>考试通过率</td>
+                <td>就业人数</td>
+                <td>就业率</td>
+                <td>口碑人数</td>
+                <td>流失人数</td>
+            </tr>
+
+            <tr onclick="to_effect(this)">
+                <td>15</td>
+                <td>校区</td>
+                <td>班级名称</td>
+                <td>督导</td>
+                <td>教员</td>
+                <td>开班日期</td>
+                <td>离校日期</td>
+                <td>班级类型</td>
+                <td>班级状态</td>
+                <td>开班人数</td>
+                <td>在读人数</td>
+                <td>考试人数</td>
+                <td>考试通过率</td>
+                <td>就业人数</td>
+                <td>就业率</td>
+                <td>口碑人数</td>
+                <td>流失人数</td>
+            </tr>
+
+            </tbody>
+        </table>
+        <div id="talkpage" style="text-align: right">
+        </div>
+    </div>
+</div>
+
+<footer class="footer mt-20">
+    <div class="container">
+        Copyright &copy;2018-2028 SONG.net All Rights Reserved.
+    </div>
+</footer>
+
+<script type="text/javascript" src="../js/jquery.2.1.4.min.js"></script>
+<script type="text/javascript" src="../libs/layui/layui.all.js"></script>
+<!--<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>-->
+<script src="../libs/h-ui.admin/js/H-ui.admin.js"></script>
+<!--<script src="../libs/layui/lay/modules/layer.js"></script>-->
+<!--<script src="../libs/layer/2.4/layer.js"></script>-->
+<script type="text/javascript">
+    $(window).on("load",()=>{
+        $(document).on("click",function (event) {
+            var tagname = event.target.nodeName;
+            //console.log(tagname)
+            if(!(tagname=="TD" || tagname=="td")){
+                $("#btnquery,#btnupdate").attr("disabled","disabled")
+                $("tr").removeClass("on_focus");
+            }
+        })
+    })
+
+    layui.use("laypage",function () {
+        let laypage = layui.laypage
+        //完整功能
+            laypage.render({
+            elem: 'talkpage'
+            ,count: 100
+            ,limits: [15, 30, 50, 100]
+            ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+            ,jump: function(obj,first){
+                //console.log(obj)
+            }
+        });
+    })
+
+    function to_effect(obj) {
+        // 按钮生效
+        $("#btnquery,#btnupdate").removeAttr("disabled")
+        // 当前对象增色 兄弟对象去色
+        $(obj).addClass("on_focus").siblings().removeClass("on_focus");
+    }
+
+    function addGrades(title,url,width,height) {
+        layer_show(title,url,width,height)
+        // alert("0")
+        // creatIframe(url,title)
+
+    }
+
+    function queryDifferent(title,url,width,height) {
+        layer_show(title,url,width,height)
+        // alert("0")
+        // creatIframe(url,title)
+
+    }
+</script>
+
+
+</body>
+</html>

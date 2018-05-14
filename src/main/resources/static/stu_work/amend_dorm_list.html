@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>修改宿舍</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+
+</head>
+<body>
+<section class="aui-content">
+    <div style="height:20px;"></div>
+    <div class="aui-content-up">
+        <form action="" name="form1" method="post">
+            <div class="aui-content-up-form">
+                <h2>修改宿舍</h2>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    宿舍名称 <em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="yourname" onBlur="checkna()" required id="1" placeholder="请输入宿舍名称">
+                    <span class="tips" id="divname">宿舍名称需详细</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    所处位置 <em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="zujin" id="2" placeholder="请输入所处位置" onBlur="checkpsd1()" required/>
+                    <span class="tips" id="phone">必须是有效的地址</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    宿舍类型 <em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="youziz" id="3" placeholder="请输入宿舍类型" onBlur="checkpsd2()" required/>
+                    <span class="tips" id="zizhi">类型必须详细</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    租金<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="password" class="aui-form-control-two" name="zujin" id="4" placeholder="请输入租金" onBlur="zujin1()" required/>
+                    <span class="tips" id="divname1">填写明细的租金</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    押金<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="password" class="aui-form-control-two" name="yajin" id="5" placeholder="请输入押金" onBlur="yajin1()" required/>
+                    <span class="tips" id="divname2">填写明细的押金</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    楼层<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="louc" id="6" placeholder="请输入楼层" onBlur="louceng()" required/>
+                    <span class="tips" id="divname3">填写具体楼层</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    容纳人数<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="password" class="aui-form-control-two" name="renshu" id="7" placeholder="请输入最大容纳人数" onBlur="renshu1()" required/>
+                    <span class="tips" id="divname4">填写最大容纳人数</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    房东<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="fangd" id="8" placeholder="请输入房东名称" onBlur="fangdong()" required/>
+                    <span class="tips" id="divname5">填写房东名字</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    房东电话<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="dianhua" id="9" placeholder="请输入房东电话" onBlur="dianhua1()" required/>
+                    <span class="tips" id="divname6">填写房东电话</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    签约日期<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="date" class="aui-form-control-two" name="qianyue" id="10" placeholder="请输入签约日期" onBlur="qianyue1()" required/>
+                    <span class="tips" id="divname7">填写签约日期</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    到期日期<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="date" class="aui-form-control-two" name="daoqi" id="11" placeholder="请输入到期日期" onBlur="daoqi1()" required/>
+                    <span class="tips" id="divname8">填写到期日期</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    财产<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="caic" id="12" placeholder="请输入财产" onBlur="caichan()" required/>
+                    <span class="tips" id="divname9">填写详细的财产</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    备注<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="beizhu" id="13" placeholder="请输入备注" onBlur="beizhu1()" required/>
+                    <span class="tips" id="divname0">需要填写备注记得备注</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    管理员<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <input type="text" class="aui-form-control-two" name="guanli" id="14" placeholder="请输入管理员" onBlur="guanli1()" required/>
+                    <span class="tips" id="guanlirenyuan">填写管理人员</span>
+                </div>
+            </div>
+            <div class="aui-form-group clear">
+                <label class="aui-label-control">
+                    校区<em>*</em>
+                </label>
+                <div class="aui-form-input">
+                    <select name="xiaoqu" style="width:80px;" class="aui-form-control-two" onblur="xiaoqu1()">
+                        <option value="">所有</option>
+                        <option value="R009-1">五一校区</option>
+                        <option value="R009-2">涉外校区</option>
+                        <option value="R009-2">林科大校区</option>
+                    </select>
+                    <span class="tips" id="xiaoqu1">填写校区</span>
+                </div>
+            </div>
+            <div class="aui-btn-default">
+                <button class="aui-btn aui-btn-account">保存并提交审核</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script type="text/javascript" src="../js/jquery.2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/up.js"></script>
+<script type="text/javascript">
+    //验证宿舍名称
+    function checkna(){
+        na=form1.yourname.value;
+        if( na.length <1 || na.length >50)
+        {
+            divname.innerHTML='<font class="tips_false">宿舍名称需详细</font>';
+        }else{
+            divname.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证地址
+    function checkpsd1(){
+        na=form1.youphone.value;
+        if( na.length <1 || na.length >50)
+        {
+            phone.innerHTML='<font class="tips_false">必须是有效的地址</font>';
+        }else{
+            phone.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证类型
+    function checkpsd2(){
+        na=form1.youziz.value;
+        if( na.length <1 || na.length >50)
+        {
+            zizhi.innerHTML='<font class="tips_false">类型必须详细</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证租金
+    function zujin1(){
+        na=form1.zujin.value;
+        if( na.length <0 || na.length >10)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写明细的租金</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证押金
+    function yajin1(){
+        na=form1.yajin.value;
+        if( na.length <0 || na.length >10)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写明细的押金</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证楼层
+    function louceng(){
+        na=form1.louc.value;
+        if( na.length <1 || na.length >50)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写具体楼层</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证人数
+    function renshu1(){
+        na=form1.renshu.value;
+        if( na.length <1 || na.length >30)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写最大容纳人数</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证房东
+    function fangdong(){
+        na=form1.fangd.value;
+        if( na.length <1 || na.length >10)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写房东名字</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证房东电话
+    function dianhua1(){
+        na=form1.dianhua.value;
+        if( na.length <1 || na.length >11)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写房东电话</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证签约日期
+    function qianyue1(){
+        na=form1.qianyue.value;
+        if( na.length <1 || na.length >20)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写签约日期</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证到期日期
+    function daoqi1(){
+        na=form1.daoqi.value;
+        if( na.length <1 || na.length >20)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写到期日期</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证财产
+    function caichan(){
+        na=form1.caic.value;
+        if( na.length <1 || na.length >100)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写详细的财产</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证备注
+    function beizhu1(){
+        na=form1.beizhu.value;
+        if( na.length <1 || na.length >100)
+        {
+            zizhi.innerHTML='<font class="tips_false">需要填写备注记得备注</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证管理员
+    function guanli1(){
+        na=form1.guanli.value;
+        if( na.length <1 || na.length >10)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写管理人员</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+
+    //验证校区
+    function xiaoqu1(){
+        na=form1.xiaoqu.value;
+        if( na.length <1 || na.length >10)
+        {
+            zizhi.innerHTML='<font class="tips_false">填写校区</font>';
+        }else{
+            zizhi.innerHTML='<font class="tips_true">输入正确</font>';
+        }
+    }
+</script>
+</body>
+</html>
